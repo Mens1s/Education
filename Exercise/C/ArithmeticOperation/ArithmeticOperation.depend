@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1634493858 source:c:\users\ahmet\desktop\education\exercise\c\arithmeticoperation\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
