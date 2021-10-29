@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int sum(int a, int b){
 	return a+b;
 }
@@ -199,6 +199,261 @@ void floyd(int a){
 		printf("\n\n");
 	}
 }
+
+int max(int a){
+	/*
+	int a;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	int maks = max(a);
+	printf("maks value is : %d\n",maks);
+	int minn = min(a);
+	printf("min value is : %d\n",minn);
+	*/
+	int b = 0;
+	int num;
+	int cont = 0;
+	while(b<a){
+		num = rand()%100;
+		printf("your number is %d\n",num);
+		if(cont<num)cont = num;
+		b++;
+	}
+	return cont;
+}
+int min(int a){
+	/*
+	int a;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	int maks = max(a);
+	printf("maks value is : %d\n",maks);
+	int minn = min(a);
+	printf("min value is : %d\n",minn);
+	*/
+	int b;
+	int num;
+	int cont=100;
+	while(b<a){
+		num = rand() %100;
+		printf("your num is : %d \n",num);
+		if(num<cont) cont=num;
+		b++;
+	}
+	return cont;
+}
+
+void checkarr(int a,int rm){
+	/*
+	int a,b;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	printf("please enter a value that you will remove : ");
+	scanf("%d",&b);
+	checkarr(a,b);
+	*/
+	int b=0;
+	char arr[a];
+	while(b<a){
+		arr[b] = rand()%100;
+		printf("your %d . value is %d \n",b+1,arr[b]);
+		b++;
+	}
+	b = 0;
+	while(b<a){
+		if(rm<=b){
+			arr[b] = arr[b+1];
+		}
+		else{
+			arr[b] = arr[b];
+		}
+		b++;
+	}
+	b=0;
+	while(b<a-1){
+		printf("your %d . value is now %d \n",b+1,arr[b]);
+		b++;
+	}
+}
+
+void drawBak(int a){
+	/*
+	int a;
+	printf("please enter a value: ");
+	scanf("%d",&a);
+	drawBak(a);
+	*/
+	int en = a*2-1;
+	for(int c = 1;c<=en;c++){
+		if(c<=a){
+			for(int d = 0;d<a-c;d++){
+				printf(" ");
+			}
+			for(int d = 0;d<c*2-1;d++){
+				printf("%c",'c');
+			}	
+		}
+		else{
+			int d;
+			for(d = 0;d<c-a;d++){
+				printf(" ");
+			}
+			for(int f = 0;f<en-(d*2);f++){
+				printf("%c",'c');
+			}
+		}
+		printf("\n");
+	}
+}
+
+void arrList(int a){
+	/*
+	int a;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	arrList(a);
+	*/
+	int arr[a];
+	int newarr[a];
+	int cont = 0;
+	int b= 0;
+	while( b < a){
+		arr[b] = rand()%100;
+		if(b%5==0){
+			printf("\n");
+		}
+		printf("%d\t",arr[b]);
+		b++;
+	}
+	int c=0,d=0;
+	while( c < a){
+		while( d < a){
+			if(cont < arr[d]){
+				cont = arr[d];
+				newarr[c] = cont;
+			}
+			d++;
+		}
+		c++;
+	}
+	b=0;
+	while( b < a){
+		if(b%5==0){
+			printf("\n");
+		}
+		printf("%d\t",newarr[b]);
+		b++;
+	}
+	
+}
+
+void addArr(int a, int num, int index){
+	/*
+	int a,b,c;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	printf("please enter a value that enrol arr : ");
+	scanf("%d",&b);
+	printf("please enter index number : ");
+	scanf("%d",&c);
+	addArr(a,b,c);
+	*/
+	int b=0;
+	int arr[a+1];
+	int tutucu,tut;
+	while(b<a){
+		arr[b] = rand()%90;
+		printf("%d\t",arr[b]);
+		b++;
+	}
+	b=0;
+	while(b<a+1){
+		if(b<index){
+			arr[b] = arr[b];
+		}
+		else if(b==index){
+			tutucu = arr[b];
+			arr[b] = num;
+		}
+		else{
+			tut = arr[b];
+			arr[b] = tutucu;
+			tutucu = tut; 
+		}
+		b++;
+	}
+	b=0;
+	printf("\n");
+	while(b<a+1){
+		printf("%d\t",arr[b]);
+
+		b++;
+	}
+}
+	
+void circle(int a){
+	/*
+	int a;
+	printf("please enter radius : ");
+	scanf("%d",&a);
+	circle(a);
+	*/
+	printf(" alan : %.2f \n cevre : %.2f",a*a*3.14);
+}	
+
+void change(int a,int b){
+	/*
+	int a,b;
+	printf("enter two values : ");
+	scanf("%d%d",&a,&b);
+	change(a,b);
+	*/
+	// return b,a;
+	printf("%d, %d",b,a);
+}
+
+void divide(int a,int b){
+	/*
+	int a,b;
+	printf("please enter values a/b :\n");
+	scanf(" %d%d",&a,&b);
+	divide(a,b);
+	*/
+	int first = a;
+	int result = 0;
+	while(a>b){
+		a = a-b;
+		result++;
+	}
+	printf("%d divide by %d is %d and remainder  is %d",first,b,result,a);
+}
+
+int median(int *arr,int boyut){
+	int a;
+	int boyut;
+	int in;
+	printf("please enter a value that you enter : ");
+	scanf("%d",&boyut);
+	int arr[boyut];
+	while(a<boyut){
+		printf("enter your %d . value : ",a+1);
+		scanf("%d",&in);
+		arr[a] = in;
+		a++;
+	}
+	float returned = median(arr,boyut);
+	printf("%.2f",returned);
+	int sum;
+	int b=0;
+	
+	while(b<boyut){
+		sum = sum+ arr[b];
+		b++;
+	}
+	float result = sum/boyut;
+	return result;
+}
+
 int main(){
 	
 }
