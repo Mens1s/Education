@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 int sum(int a, int b){
 	return a+b;
 }
@@ -429,18 +430,21 @@ void divide(int a,int b){
 }
 
 int median(int *arr,int boyut){
+	/*
 	int a;
 	int boyut;
 	int in;
 	printf("please enter a value that you enter : ");
 	scanf("%d",&boyut);
 	int arr[boyut];
+	
 	while(a<boyut){
 		printf("enter your %d . value : ",a+1);
 		scanf("%d",&in);
 		arr[a] = in;
 		a++;
 	}
+	*/
 	float returned = median(arr,boyut);
 	printf("%.2f",returned);
 	int sum;
@@ -454,6 +458,151 @@ int median(int *arr,int boyut){
 	return result;
 }
 
+void sqrtMy(double a){
+	/*
+	double a;
+	printf("please enter value : ");
+	scanf("%lf",&a);
+	sqrtMy(a);
+	return 0;
+	*/
+	double b = a/2;
+	if(a>0.0){
+		for(int i = 0;i<50;i++){
+			b =((b*b)+a)/(2*b);
+		}
+		printf("%.2lf  karekoku = %.3lf",a,b);
+	}
+	else if(a==0)printf("%d  karekoku = %d",0,0);
+	else{
+		printf("please enter pozitive value");
+	}
+	
+}
+
+void drawBut(int a){
+	/*
+	int a;
+	printf("please enter value: ");
+	scanf("%d",&a);
+	drawBut(a);
+	*/
+	int bos;
+	int bosC=0;
+	int starC=0;
+	float result;
+	result = a/2;
+	if( a/2 < result) result = result;
+	else result++;
+	for(int sat = 0;sat<=a;sat++){
+		if(sat<result){
+			for(bos = 0;bos<sat;bos++){
+				printf(" ");
+			}
+			for(int star = a;star>bos*2;star--){
+				printf("*");
+			}
+			printf("\n");
+		}
+		else{
+			for(bos = a/2;bos>bosC;bos--){
+				printf(" ");
+			}
+			for(int star = 0;star<=starC;star++){
+				printf("*");
+			}
+			bosC++;
+			starC+=2;
+			printf("\n");
+		}
+	}
+}
+
+void calculateHour(int a){
+	/*
+	int a;
+	printf("please enter seconds : ");
+	scanf("%d",&a);
+	calculateHour(a);
+	*/
+	int hour = a/3600;
+	int minute = (a%3600)/60;
+	int seconds = ((a%3600)%60);
+	printf("%d : %d : %d",hour,minute,seconds);
+}
+
+void toFahr(int a, int f){
+	/*
+	int a,b;
+	printf("please enter (cel)degree : ");
+	scanf("%d",&a);
+	printf("please enter (fahr)degree : ");
+	scanf("%d",&b);
+	toFahr(a,b);
+	*/
+	float fahr = (1.8*a)+32;
+	float celc = (5*(f-32))/9;
+	printf(" %d celcius equals to %.2f fahrenit \n %d fahrenit is equals to %.2f celcius",a,fahr,f,celc);
+}
+
+void findArea(int a,int b,int c){
+	/*
+	int a,b,c;
+	printf("please enter side lenght of threeangle : ");
+	scanf("%d%d%d",&a,&b,&c);
+	findArea(a,b,c);
+	*/
+	int u = (a+b+c)/2;
+	float alan=sqrt(u*(u-a)*(u-b)*(u-c));
+	printf("area is %.2f",alan);
+}
+
+void calArr(int a){
+	/*
+	int a;
+	printf("please enter a value : ");
+	scanf("%d",&a);
+	calArr(a);
+	*/
+	int result = 0;
+	for(int b = 1;b<=a;b++){
+		result = result + b*b;
+	}
+	printf("%d",result);
+}
+
+void comArr(int fl,int sl){
+	/*
+	int a,b;
+	printf("please enter lenght of first arr : ");
+	scanf("%d", &a);
+	printf("please enter lenght of second arr : ");
+	scanf(" %d", &b);
+	comArr(a,b);
+	*/
+	int f_arr[fl];
+	int s_arr[sl];
+	int r_arr[fl+sl];
+	for(int a = 0;a<fl;a++){
+		f_arr[a] = rand()%50;
+		printf("%d\t",f_arr[a]);
+	}
+	printf("\n");
+	for(int a = 0;a<sl;a++){
+		s_arr[a] = rand()%50;
+		printf("%d\t",s_arr[a]);
+	}
+	printf("\n");
+	for(int a = 0;a<sl+fl;a++){
+		if(a<fl){
+			r_arr[a] = f_arr[a];
+		}
+		else{
+			r_arr[a] = s_arr[a-fl];
+		}
+		printf("%d\t",r_arr[a]);
+	}
+}
 int main(){
 	
 }
