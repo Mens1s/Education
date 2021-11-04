@@ -10,21 +10,7 @@
 # # input: [[1, 2], [3, 4], [5, 6, 7]]
 
 # output: [[[7, 6, 5], [4, 3], [2, 1]]
-
-# class homework():
-#     def __init__(self,liste):
-#         self.result = []
-#         self.liste = liste
-
-#     def flatten(self):
-#         for a in self.liste:
-#             if isinstance(a,list):
-#                 homework.flatten(a)
-#             else:
-#                 self.result.append(a)
-#         print(self.result)
-# liste = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
-# homework.flatten(liste)
+#  #### First HW
 result = []
 def flatten(liste):
     for a in liste:
@@ -32,7 +18,20 @@ def flatten(liste):
             flatten(a)
         else:
             result.append(a)
-            
+
 liste = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
 flatten(liste)
 print(result)
+
+#### Second HW
+result = []
+def reverse(liste):
+    for a in liste:
+        if isinstance(a,list):
+            result.append(a[::-1])
+        else:
+            result.append(a)
+    return result[::-1]
+liste = [[1, 2], [3, 4], [5, 6, 7]]
+print(reverse(liste))
+
