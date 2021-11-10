@@ -2,6 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+void rightArrow(){
+	int sayi;
+	printf("please enter a value : ");
+	scanf("%d",&sayi);
+	for(int a = 0;a<sayi;a++){	
+		for(int b = 0;b<a;b++){
+			printf("  ");
+		}
+		for(int b = 0;b<sayi-a;b++){
+			printf("* ");
+		}
+		if(a != sayi-1){
+			printf("\n");
+		}
+		
+	}
+	for(int a  = 0;a<sayi+1;a++){
+		for(int b = 0;b<sayi-a;b++){
+			printf("  ");
+		}
+		for(int b = 0;b<a;b++){
+			printf("* ");
+		}
+		printf("\n");
+	}
+}
 void upperr(){
 	char a;
 	printf("please enter a big Character : ");
@@ -182,6 +208,112 @@ void charCounter(){
 		printf("%c   :   %d \n",(char)a+65,arr[a+1][1]);
 	}
 }
+void cift(int sayi){
+	if(sayi%2==0){
+		printf("Entered number is a multiple of 2\n");
+	}}
+void thirt(int sayi){
+	if(sayi%3==0){
+		printf("Entered number is a multiple of 3\n");
+	}
+	if(sayi%6==0){
+		printf("Entered number is a multiple of 6\n");
+	}
+}
+void divide(int *deger){
+	if(*deger%2==0){
+		printf("your entered number is multiple of 2\n");
+	}
+	if(*deger%3==0){
+		printf("your entered number is multiple of 3\n");
+	}
+	if(*deger%6==0){
+		printf("your entered number is multiple of 6\n");
+	}
+}
+void calculator(char *op,int *a,int *b){
+	/*
+		int a,b;
+	char op;
+	printf("please enter your op: ");
+	scanf("%c",&op);
+	printf("please enter two number : ");
+	scanf(" %d%d",&a,&b);
+	calculator(&op,&a,&b);
+	*/
+	switch(*op){
+		case '+':
+			printf("%d + %d = %d",*a,*b,*a+*b);
+			break;
+		case '-':
+			printf("%d - %d = %d",*a,*b,*a-*b);
+			break;
+		case '/':
+			printf("%d / %d = %d",*a,*b, (int)(*a / *b));
+			break;
+		case '*':
+			printf("%d X %d = %d",*a,*b,*a * *b);
+			break;
+	}
+}
+void arrlist(){
+	int len;
+	printf("please enter your arr length :");
+	scanf("%d",&len);
+	int arr[len];
+	for(int c = 0;c<len;c++){
+		arr[c] = rand() % 100;
+	}
+	for(int d = 0;d<len;d++){
+		int temp = 0;
+		for(int c = 0;c<len-1;c++){
+			if(arr[c]<arr[c+1]){
+				continue;
+			}
+			else{
+				temp = arr[c+1];
+				arr[c+1]=arr[c]; 
+				arr[c] = temp;
+			}
+		}
+	}
+	for(int a = 0;a<len;a++){
+		printf("%d\t",arr[a]);
+	}
+}
+int enterArr(int *min,int *max,int *sum){
+	int column,line;
+	int mina=100,maxa=0,suma=0;
+	printf("please enter your column len : ");
+	scanf("%d",&column);
+	printf("please enter your line len : ");
+	scanf(" %d",&line);
+	int arr[column][line];
+	for(int a = 0;a<line;a++){
+		for(int b = 0;b<column;b++){
+			printf("please enter your %d %d element : \n",a+1,b+1);
+			scanf("%d",&arr[a][b]);
+		}
+	}
+	printf("your arr is : \n");
+	for(int a= 0;a<line;a++){
+		for(int b = 0;b<column;b++){
+			suma += arr[a][b];
+			printf("%d\t",arr[a][b]);
+			if(arr[a][b]>= maxa){	
+				maxa = arr[a][b];
+			}
+			if(arr[a][b]<=mina){
+				mina = arr[a][b];
+			}
+		}printf("\n");
+	}
+	*min = mina;
+	*max = maxa;
+	*sum = suma;
+}
 int main(){
-	
+	int sum,min,max;
+	enterArr(&min,&max,&sum);
+	printf(" sum is %d \n min is %d \n max is %d",sum,min,max);
 }
