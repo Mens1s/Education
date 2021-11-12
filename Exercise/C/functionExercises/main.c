@@ -603,6 +603,644 @@ void comArr(int fl,int sl){
 		printf("%d\t",r_arr[a]);
 	}
 }
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+//Dışardan girilen n sayısına kadar olan sayıların toplamını veren c programı.
+void sum(){
+    int a,result= 0;
+    printf("please enter a value : ");
+    scanf("%d",&a);
+    for(int b = 0;b<a;b++){
+        result = result +b;
+    }
+    printf("result is : %d",result);
+}
+
+//Yarı çapı dışardan girilen bir dairenin çevresini ve alanını bulan c programı.
+
+void circle(){
+    int radius,len,alan;
+    printf("please enter radius :");
+    scanf("%d",&radius);
+    printf(" area is : %.2f \n circumference length is : %.2f",2*3.14*radius*radius,2*radius*3.14);
+}
+
+//Dışarıdan girilen bir n tam sayısına kadar olan tek tam sayıların toplamını bulan c programı.
+void tekTop(){
+    int sayi,result =0;
+    printf("please enter a value : ");
+    scanf("%d",&sayi);
+    for(int a = 1;a<sayi;a++){
+        if(a%2==1){
+            result = a+result;
+        }
+    }
+    printf("the result is : %d",result);
+}
+
+//Dışardan girilen n sayısına kadar olan sayıların karelerinin toplamını hesaplayan c programı.
+void sumsquare(){
+    int sayi,result;
+    printf("please enter a value : ");
+    scanf("%d",&sayi);
+    for(int a = 0;a<sayi;a++){
+        result = result+(sayi*sayi);
+    }
+    printf("%d",result);
+}
+
+//Dışardan girilen 3 sayının en büyüğünü bulan c programı.
+void findBig(){
+    int a,result = 0;
+    printf("please enter a len : ");
+    scanf("%d",&a);
+    int arr[a];
+    for(int b = 0;b<a;b++){
+        printf("please enter your %d . value : ",b+1);
+        scanf("%d",&arr[b]);
+        if(b>0){    
+            if(arr[b]>arr[b-1]){
+                result = arr[b];
+            }
+        }
+    }
+    printf("result is : %d",result);
+}
+
+//Dışardan girilen n adet sayının aritmetik sayının aritmetik ortalamasını bulan c programı
+void arithmetic(){
+    int len;
+    float result = 0;
+    printf("please enter a len : ");
+    scanf("%d",&len);
+    for(int a = 0;a<len;a++){
+        int temp;
+        printf("enter your %d value : ",a+1);
+        scanf("%d",&temp);
+        result = temp+result;
+    }
+    printf("your result is : %.2f",result/len);
+}
+
+//Çarpma işlemini kullanmadan iki sayının çarpımını bulan c programı
+void longMulti(){
+    int a,b;
+    printf("please enter a first value : ");
+    scanf("%d",&a);
+    printf("please enter second value : ");
+    scanf("%d",&b);
+    int result = 0;
+    for(int c = 0;c<b;c++){
+        result = a+result;
+    }
+    printf("result is %d",result);
+}
+
+//1'den 999'a kadar olan tam sayılar içeresinden basamaklarının küp değeri toplamı kendisine eşit olan c programı
+void interesting(){
+    for(int sayi = 0;sayi<1000;sayi++){
+        int yuz = sayi/100;
+        int ond = (sayi%100)/10;
+        int birlik = (sayi%100)%10;
+        if((yuz*yuz*yuz)+(ond*ond*ond)+(birlik*birlik*birlik) == sayi)
+        {
+            printf("%d\n",sayi);            
+        }
+    }
+    
+}
+
+//Dışarıdan girilen bir sayının rakamları toplamını bulan c programı.
+void charSum(){
+    int sayi = 0,result,toplam;
+    printf("please enter a value : ");
+    scanf("%d",&sayi);
+    while(sayi>10){
+        result = sayi%10;
+        toplam += result;
+        sayi = sayi / 10;
+    }
+    printf("%d",result);
+}
+/*
+2 3 4 5 6
+3 5 7 9 11
+4 7 10 13 16
+5 9 13 17 21
+6 11 16 21 26
+Yukarıdaki çıktıyı veren c programı.
+*/
+void dont(){
+    for(int a = 1;a<7;a++){
+        int sayi = 1;
+        for(int b = 1;b<=5;b++){
+            sayi = sayi+a;
+            printf("%d\t",sayi);
+        }printf("\n");
+    }
+}
+/*
+*
+**
+***
+****
+*****
+Yukarıdaki çıktıyı veren c programı.
+*/
+void stars(){
+    int sayi;
+    printf("please enter a value : ");
+    scanf("%d",&sayi);
+    for(int a = 0; a<sayi;a++){
+        for(int b = 0;b<a+1;b++){
+            printf("* ");
+        }printf("\n");
+    }
+}
+/*
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+Yukarıdaki çıktıyı veren c programı.
+*/
+void numPat(){
+    int sayi;
+    printf("please line number : ");
+    scanf("%d",&sayi);
+    int result = 1;
+    for(int a = 1;a<=sayi;a++){
+        for(int b = 0;b<a;b++){
+            printf("%d ",result);
+            result++;
+        }printf("\n");
+    }
+}
+// iki sayi arasındaki asal sayı adedi
+void findPrime(){
+    int start,end;
+    printf("iki value enterla");
+    int control = 0;
+    scanf("%d%d",start,end);
+    for(;start<end;start++){
+        control = 0;
+        for(int a = 2;a<start;a++){
+            if(start%a == 0){
+                control = 1;
+            }
+        }
+        if(control == 0){
+            printf("%d is prime",start);
+        }
+    }
+}
+/*
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+6 5 4 3 2 1
+7 6 5 4 3 2 1
+Yukarıdaki çıktıyı veren c programı.
+*/
+void starPat(){
+    for(int a = 0;a<8;a++){
+        for(int b = a;b>0;b--){
+            printf("%d\t",b);
+        }printf("\n");
+    }
+}
+//N elemanlı bir dizideki elemanların toplamını bulan program
+void arrSum(){
+    int len,sum = 0;
+    printf("please enter your arr len: ");
+    int arr[len];
+    for(int a = 0;a < len; a++){
+        printf("enter your %d . number of array : ");
+        scanf("%d",arr[a]);
+        sum += arr[a];
+        printf("your new int is : %d and new sum is : %d",arr[a],sum);
+    }
+}
+
+//N elemanlı bir dizideki pozitif elemanların ortalamasını bulan program.
+void medianPoz(){
+    int len;
+    printf("please enter len : ");
+    scanf("%d",&len);
+    int arr[len];
+    int sum;
+    float control = 0;
+    for(int a = 0;a<len;a++){
+        printf("please enter %d . value.",a+1);
+        scanf("%d",&arr[a]);
+        if(arr[a]>0){
+            sum += arr[a];
+            control++;
+        }
+    }
+    printf("median is : %.2f",(sum/control));
+}
+//N elemanlı bir dizideki en küçük elemanı ve bu elemanın adresini bulan program.
+void findmin(){
+    int a,min;
+    printf("please enter len : ");
+    scanf("%d",&a);
+    int result[a];
+    for(int b = 0;b<a;b++){
+        printf("please enter a value : ");
+        scanf("%d",&result[b]);
+        if(b>0){
+            if(result[b]<result[b-1]){
+                min = result[b];
+            }
+        }
+    }
+    printf("min is : %d\n ",min);
+    printf("location is : ",&min);
+}
+
+//Dışarıdan girilen N elemanlı bir diziyi tersine çeviren program.
+void reverseArr(){
+    int len;
+    printf("please enter len : ");
+    scanf("%d",&len);
+    int arr[len];
+    int control = 0;
+    for(int a = 1;a<=len;a++){
+        printf("please enter %d . value. ",a);
+        scanf("%d",&arr[len-control-1]);
+        control++;
+    }
+    for(int a = 0;a<len;a++){
+        printf("your %d . value is : %d \n",a+1,arr[a]);   
+    }
+}
+
+//Fibonacci Sayılarını dışarıdan girilen N sayısı kadar yazan c programı.
+void fibonacc(){
+    int end;
+    printf("please end point : ");
+    scanf("%d",&end);
+    int now=1,temp=0,tempp = 0;
+    for(int a = 0;a<end;a++){
+        temp = now;
+        now = now +tempp;
+        tempp = temp;
+        printf(" now is : %d  temp is : %d\n",now,temp);
+    }
+}
+//N elemanlı bir dizideki tek elemanları dizinin başına çift elemanları dizinin sonuna taşıyan c programı.
+void oddStart(){
+    int len;
+    printf("please enter value : ");
+    scanf("%d",&len);
+    int arr[len];
+    int temp;
+    int control_e = 1,control_o = 0;
+    for(int a = 0;a<len;a++){
+        printf("please enter your %d . value .", a+1);
+        scanf("%d",&temp);
+        if(temp % 2 == 0){
+            arr[len-control_e] = temp;
+            control_e++;
+        }
+        else{
+            arr[control_o] = temp;
+            control_o++;
+        }
+    }
+    for(int a = 0;a<len;a++){
+        printf("%d\n",arr[a]);
+    }
+}
+
+//Dışarıdan girilen N boyutlu A ve B vektörlerinin skaler çarpımını hesaplayan c programı.
+void skalerMinus(){
+    //input
+    int arr[3][3][3]=
+    {
+        {{1,2,3},{4,5,6},{7,8,9}},
+        {{10,11,12},{13,14,15},{16,17,18}},
+        {{19,20,21},{22,23,24},{25,26,27}}
+    };
+    int dimen;
+    printf("please enter your array dimensions : ");
+    scanf("%d",&dimen);
+    
+    for(int a = 0; a < dimen ; a++ ){
+        int temp = 1;
+        for(int b = 0;b<dimen;b++){
+            temp *= arr[b][a][0];
+            
+        }printf("%d\n",temp);
+        temp = 1;
+        for(int b = 0;b < dimen ; b++){
+            temp *= arr[b][a][1];
+        }printf("%d\n",temp);
+        temp = 1;
+        for(int b = 0;b < dimen ; b++){
+            temp *= arr[b][a][2];
+        }printf("%d\n",temp);
+    }
+
+}
+
+//Dışarıdan girilen n elemanlı bir dizideki en büyük elemanı en küçük elemanı ve en büyük elemanla en küçük eleman arasındaki farkı bulan c programı.
+void sub(){
+    int len;
+    printf("please enter len : ");
+    scanf("%d",&len);
+    int arr[len];
+    /*
+    printf("please enter pozitive number if you say enough please type 0 or negative number : ");
+    int temp = 1,a=0;
+    while(temp > 0){
+        scanf("%d",&temp);
+        arr[a] = temp;
+        a++;
+    }
+    */
+   int big=0,small=100;
+   for(int a = 0;a<len;a++){
+        printf("please enter %d. number : ",a+1);
+        scanf("%d",&arr[a]);
+        if(a>0){
+            if(arr[a]>arr[a-1]){
+                big = arr[a];
+            }
+            else{
+                small = arr[a];
+            }
+       }
+   }
+   printf("\n big is %d , smaall is : %d  substract is %d ",big,small,big-small);
+
+}
+
+
+
+//Bir dizinin elemanlarını dışarıdan girilen bir X sayısına göre küçükleri dizinin baş tarafına, büyükleri ise son tarafına yerleştiren program.
+void orderByme(){
+    int arr[10] = {5,3,8,2,6,9,7,4,1,0};
+    printf("please enter value : ");
+    int num;
+    scanf("%d",&num);
+    int big = 9;
+    int small = 0;
+    int temp;
+    int new_arr[10];
+    for(int a = 0;a<10;a++){
+        if(num>arr[a]){
+            new_arr[small] = arr[a];
+            small++;
+        }
+        else{
+            new_arr[big] = arr[a];
+            big--;
+        }
+        
+    }
+    for(int a = 0;a<10;a++){
+        printf("%d\n",new_arr[a]);
+    }
+}
+
+//Dışarıdan girilen N elemanlı bir dizideki tek indisli elemanlarının başka bir diziye atayan program.
+void evenIndex(){
+    int len,counter = 0;
+    printf("please enter a len ");
+    scanf("%d",&len);
+    int arr[len];
+    int arr_o[len];
+    for(int a = 0;a<len;a++){
+        printf("please enter your %d. element : ",a+1);
+        scanf("%d",&arr[a]);
+        if(a == 0){
+            a = a;
+        }
+        else if(a%2==0){
+            a = a;
+        }
+        else{
+            arr_o[counter] = arr[a];
+            counter++;
+        }
+    }
+    for(int a = 0;a<counter;a++){
+        printf("%d\n",arr_o[a]);
+    }
+}   
+
+//Dışarıdan girilen bir X değerinini yine dışarıdan girilen N elemanlı bir dizideki elemanlardan hangisine en yakın olduğunu bulan program.
+void findNear(){
+    int num,len;
+    printf("please enter your num : ");
+    scanf("%d",&num);
+    printf("please enter len : ");
+    scanf("%d",&len);
+    int print;
+    int temp = 0;
+    int cevap = 11000;
+    for(int a = 0;a<len;a++){
+        printf("please enter your %d. value : ",a+1);
+        scanf("%d",&temp);
+        int result = num-temp;
+        if (result < 0) result = -result;
+        if(result < cevap){
+            cevap = result;
+            print = temp;
+        }
+    }
+    printf("your result is : %d ",print);
+}
+//Permütasyon hesaplayan formülü fonksiyon kullanarak c kodlarını yazınız.
+void perm(){
+    char arr[3] = "abc";
+    for(int a = 0; a < 3;a++){
+        for(int b = 0; b< 3;b++){
+            printf("%c %c\n",arr[a],arr[b]);
+        }printf("\n");
+    }
+}
+//Dışarıdan girilen bir sayının yine dışarıdan girilen üssünü hesaplayan programı fonksiyon kullanarak yapınız.
+void us(){
+    printf("please a number : ");
+    int num;
+    scanf("%d",&num);
+    int temp = num;
+    printf("please another number : ");
+    int num_two;
+    scanf("%d",&num_two);
+    for(int a = 0;a<num_two-1;a++){
+        num = num * temp;
+    }
+    printf("%d^%d is : %d",temp,num_two,num);
+}
+//N x M boyutlu matristeki en büyük elemanı ve bu elemanın satır ve sütün adresini bulan C programı.
+void maks(){
+    int line,column,maks;
+    printf("please enter line number : ");
+    scanf("%d",&line);
+    printf("please enter column number : ");
+    scanf("%d",&column);
+    int arr[line][column];
+    int temp = 0;
+    int location_l,location_c;
+    for(int a = 1;a<=line;a++){
+        for(int b = 1;b<=column;b++){
+            printf("please enter your %d. %d. value : ",a,b);
+            scanf("%d",&arr[a][b]);
+            if(b>0){
+                if(arr[a][b]>maks){
+                    location_l = a;
+                    location_c = b;
+                    printf("maks is %d %d ",location_l,location_c);
+                    maks = arr[a][b];
+                }
+            }
+
+        }
+    }
+    printf("maks is %d %d ",location_l,location_c);
+}
+
+//NxN boyutlu bir matrisin esas köşegenin elemanlarının toplamını bulan C programı
+void find(){
+    int len;
+    printf("please enter n : ");
+    scanf("%d",&len);
+    int arr[len][len];
+    int result;
+    for(int a = 0;a<len;a++){
+        for(int b = 0;b<len;b++){
+            arr[a][b] = rand() % 100;
+            if(a==b || a+b==len-1){
+                if(a==b && a+b==len-1){
+                    result += arr[a][b];
+                }
+                result += arr[a][b];
+            }
+            printf("%d \t",arr[a][b]);
+        }printf("\n");
+    }printf(" sum  is %d",result);
+}
+
+//NxM boyutlu iki matrisin toplamını bulan c programı.
+void sumMatrix(){
+    int line,column;
+    printf("please enter a value : ");
+    scanf("%d",&line);
+    printf("please enter second value : ");
+    scanf("%d",&column);
+    int arr[line][column];
+    int arr_2[line][column];
+    int result = 0;
+    for(int a = 0;a<line;a++){
+        for(int b = 0;b<column;b++){
+            arr[a][b] = rand() % 50;
+            arr_2[a][b] = rand() % 50 +50;
+            result += arr_2[a][b] + arr[a][b];
+            printf("%d + %d = %d\n",arr[a][b],arr_2[a][b],result);
+        }printf("\n");
+    }
+    printf("result is : %d",result);
+}
+
+//NxN boyutlu bir matrisin sütunları toplamını başka bir diziye atayan c programı.
+void sumSutun(){
+    int len;
+    printf("please enter a len : ");
+    scanf("%d",&len);
+    int arr[len][len],return_arr[len][1];
+    for(int a = 0;a<len;a++){
+        int result = 0;
+        for(int b = 0;b<len;b++){
+            arr[a][b] = rand() % 100;
+            result += arr[a][b];
+        }
+	    return_arr[a][0] = result;   
+        printf("result is : %d\n",return_arr[a][0]);
+    }
+}
+
+//Dışarıdan girilen NxN boyutlu bir matriste bazı hatalar oluşmuştur. Bu hatalar sıfır ile gösterilmiştir. Her satırda kaç tane hata olduğunu bulan c programı.
+void fixMatrix(){
+    int n = 5;
+    int arr[5][5] ={
+            {0,1,2,3,0},
+            {4,5,0,7,0},
+            {8,0,9,10,11},
+            {12,0,14,15,0},
+            {0,17,0,0,0}
+            }; 
+    for(int a = 0;a<n;a++){
+        for(int b = 0;b<n;b++){
+            if(arr[a][b]==0){
+                arr[a][b] = 26;
+            }
+        }
+    }
+    for(int a = 0;a<n;a++){
+        for(int b = 0;b<n;b++){
+            printf("%d\t",arr[a][b]);
+        }printf("\n");
+    }
+}
+
+//Dışarıdan girilen NxN boyutlu bir kare matrisin simetrik olup olmadığını bulan c programı.
+void simetricMatrix(){
+    int len = 5;
+    int arr[5][5] ={
+            {0,0,0,0,0},
+            {0,0,0,0,0},
+            {0,0,0,0,0},
+            {0,0,0,0,0},
+            {0,0,0,0,0}
+            };
+    int non = 0;
+    for(int a = 0;a<len;a++){
+        int control = len-1;
+        for(int b = 0;b<len/2-1;b++){
+            if(arr[a][b]!=arr[a][control]){
+                non = 1;
+            }
+            control--;
+        }
+    }
+    printf("%d",non);
+}
+
+//Kullanıcı tarafından girilen metinin şifrelenip, çözülmesini sağlayan C programı.
+void encode(){
+    char sifre[100];
+    char encoded[100];
+    printf("please enter your password : ");
+    fgets(sifre,100,stdin);
+    for(int a = 0;a<strlen(sifre)-1;a++){
+        
+        encoded[a] = (char)((int)sifre[a]-24);
+        printf("%c",encoded[a]);
+        
+    }
+    printf("\n");
+    int choice;
+    printf("do you want your password again type 1:");
+    scanf("%d",&choice);
+    if(choice == 1){
+        for(int a = 0;a<strlen(sifre)-1;a++){
+        
+        encoded[a] = (char)((int)encoded[a]+24);
+        printf("%c",encoded[a]);
+        
+    }
+    }
+}
 int main(){
-	
+
 }
