@@ -1241,6 +1241,54 @@ void encode(){
     }
     }
 }
+
+void sortingInt(){
+    int len;
+    printf("please enter a len of array : ");
+    scanf("%d",&len);
+    int arr[len];
+    for(int a = 0; a < len ; a++){
+        arr[a] = rand() % 100;
+        printf("%d  ",arr[a]);
+    }
+    int temp;
+    for(int a = 0; a < len ; a++){
+        for(int b = 0; b < len-1 ; b++){
+
+            if(arr[b]>arr[b+1]){
+                temp = arr[b];
+                arr[b] = arr[b+1];
+                arr[b+1] = temp;
+            }
+        }
+    }
+    printf("\n");
+    for(int a = 0;a<len;a++){
+        printf("%d  ",arr[a]);
+    }
+}
+
+void sortingChar(){
+    printf("please enter your sentence : ");
+    char sentence[100];
+    fgets(sentence,100,stdin);
+    char temp;
+
+    for(int a = 0; a < strlen(sentence) ; a++){
+        for(int b = 0; b < strlen(sentence)-1 ; b++){
+            if((int)sentence[b] > (int)sentence[b+1] ){
+                    temp = sentence[b];
+                    sentence[b] = sentence[b+1];
+                    sentence[b+1] = temp;
+            }
+        }
+    }
+
+
+    for(int a = 0; a < strlen(sentence) ; a++ ){
+        printf("%c",sentence[a]);
+    }
+}  
 int main(){
 
 }
