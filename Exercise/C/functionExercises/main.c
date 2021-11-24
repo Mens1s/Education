@@ -1289,6 +1289,77 @@ void sortingChar(){
         printf("%c",sentence[a]);
     }
 }  
+//Leap year
+
+void leapYear(){
+	int year;
+	printf("please enter a year : ");
+	scanf("%d",&year);
+	if(year%4==0){
+		if(year%100 == 0){
+			if(year%400 == 0) printf("leap year");
+			else printf("comman year");	
+		}
+		else printf("comman year");
+	}
+}
+
+// find the len of digit also find first and last digit
+
+void findDigit(){
+	int number,a=1,counter =0;
+	
+	printf("please enter a number : ");
+	scanf("%d",&number);
+	int temp = number;
+	int last = number % 10;
+	while(number > 10){
+		number = number / 10;
+	}	
+	int temp2 = number;
+	number = temp;
+	while(1==1){
+		number -= a;
+		if(number < 0) break;
+		counter++;
+		a *= 10;
+	}
+	printf("len of digit is : %d  first number is : %d  last digit is : %d",counter,temp2,last);
+	
+}
+
+// swap first and last digit of a number
+
+void swap(){
+	int number,temp,a=1,counter=0;
+	printf("please enter a number : ");
+	scanf("%d",&number);
+	temp = number;
+	while(1==1){	
+		temp -= a;
+		if(temp < 0) break;
+		counter++; 
+		a *= 10;
+	}
+	temp = number;
+	int last = number % 10;
+	while(temp>10){
+		temp /= 10;
+	}
+	int first = temp;
+	temp = first;
+	int tempL = last;
+	for(int a = 1; a< counter; a++){
+		last *= 10;
+		temp *= 10;
+		if(a==counter-1) {
+			int mid = number - temp - tempL;
+			last = last + mid + first;
+		}
+	}
+	printf("%d",last);
+}
+
 int main(){
 
 }
